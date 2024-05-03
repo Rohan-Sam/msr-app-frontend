@@ -10,7 +10,9 @@ function SymptomsInput({ setPred }) {
   const [value, setValue] = useState([]);
 
   const fetchData = async () => {
-    const response = await fetch("api/data");
+    const response = await fetch(
+      "https://msr-app-backend.onrender.com/api/data"
+    );
     const jsonData = await response.json();
     setData(jsonData);
   };
@@ -26,13 +28,16 @@ function SymptomsInput({ setPred }) {
       symptoms: value, // Assuming 'value' contains the array of symptoms
     };
     try {
-      const response = await fetch("api/predict", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(predictData),
-      });
+      const response = await fetch(
+        "https://msr-app-backend.onrender.com/api/predict",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(predictData),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Failed to send prediction data");
