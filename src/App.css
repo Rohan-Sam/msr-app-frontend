@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .flex-1 {
+    flex: 1;
+  }
+  
+  /* Your other CSS styles for Navbar, Footer, etc. */
+  
+  .Footer {
+    margin-top: auto;
+  }
+
+  
+.Card{
+    background-color: red;
+}
